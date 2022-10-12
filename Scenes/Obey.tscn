@@ -7,7 +7,7 @@
 [ext_resource path="res://Images/door-removebg-preview.png" type="Texture" id=5]
 [ext_resource path="res://Scripts/Coin.gd" type="Script" id=6]
 [ext_resource path="res://Fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=7]
-[ext_resource path="res://Scripts/Door.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/Game.gd" type="Script" id=8]
 [ext_resource path="res://Scripts/Score.gd" type="Script" id=9]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=10]
 
@@ -58,6 +58,7 @@ extents = Vector2( 19.5, 24.5 )
 
 [node name="Game" type="Node2D"]
 position = Vector2( 515, 301 )
+script = ExtResource( 8 )
 
 [node name="Player" type="KinematicBody2D" parent="."]
 script = ExtResource( 10 )
@@ -82,7 +83,7 @@ tile_data = PoolIntArray( -196615, 0, 0, -196614, 0, 0, -196613, 0, 0, -196612, 
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
-[node name="Score" type="Label" parent="HUD"]
+[node name="Score" type="Label" parent="HUD" groups=["HUD"]]
 anchor_left = -0.87
 anchor_top = 0.045
 anchor_right = -0.87
@@ -171,7 +172,6 @@ shape = SubResource( 5 )
 
 [node name="Door" type="Area2D" parent="."]
 position = Vector2( 417, 157 )
-script = ExtResource( 8 )
 
 [node name="Sprite" type="Sprite" parent="Door"]
 scale = Vector2( 0.7, 0.7 )
@@ -187,4 +187,5 @@ shape = SubResource( 7 )
 [connection signal="body_entered" from="Coin3" to="Coin3" method="_on_Coin_body_entered"]
 [connection signal="body_entered" from="Coin4" to="Coin4" method="_on_Coin_body_entered"]
 [connection signal="body_entered" from="Coin5" to="Coin5" method="_on_Coin_body_entered"]
+[connection signal="body_entered" from="Door" to="." method="_on_Door_body_entered"]
 [connection signal="body_entered" from="Door" to="Door" method="_on_Door_body_entered"]
