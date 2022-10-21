@@ -7,12 +7,32 @@ onready var Player := $Player
 onready var Door := $Door
 onready var Score := $HUD/Score
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
 func _on_Door_body_entered(body):
 	if Score.score == total:
 		get_tree().change_scene("res://Scenes/GameOver.tscn")
+
+
+
+func _on_Coin_coin_taken():
+	get_tree().call_group("HUD", "update_score")
+	$Coin.queue_free()
+
+
+func _on_Coin2_coin_taken():
+	get_tree().call_group("HUD", "update_score")
+	$Coin2.queue_free()
+
+
+func _on_Coin3_coin_taken():
+	get_tree().call_group("HUD", "update_score")
+	$Coin3.queue_free()
+
+
+func _on_Coin4_coin_taken():
+	get_tree().call_group("HUD", "update_score")
+	$Coin4.queue_free()
+
+
+func _on_Coin5_coin_taken():
+	get_tree().call_group("HUD", "update_score")
+	$Coin5.queue_free()
