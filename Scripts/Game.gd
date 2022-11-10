@@ -16,9 +16,38 @@ func _on_Coin_coin_taken():
 	get_tree().call_group("HUD", "update_score")
 
 
+func _on_Life_score_no_life():
+	get_tree().change_scene("res://Scenes/GameOver.tscn")
+
+
 func _on_Trap_trapped():
 	get_tree().call_group("Life", "update_life_score")
 
 
-func _on_Life_score_no_life():
-	get_tree().change_scene("res://Scenes/GameOver.tscn")
+var next_step = 0
+
+func _on_Moon_in_moon():
+	if next_step != 0:
+		Player.position = $Start.position
+		next_step = 0
+	else:
+		next_step = 1
+
+
+func _on_Star_on_star():
+	if next_step != 1:
+		Player.position = $Start.position
+		next_step = 0
+	else:
+		next_step = 2
+
+
+func _on_Sun_on_sun():
+	if next_step != 2:
+		Player.position = $Start.position
+		next_step = 0
+	else:
+		next_step = 0
+
+
+
