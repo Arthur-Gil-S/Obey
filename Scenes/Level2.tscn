@@ -1,205 +1,416 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Obey.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Moon.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Star.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Sun.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Coin.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/FullMoon.tscn" type="PackedScene" id=6]
 
 [node name="Game" instance=ExtResource( 1 )]
 
 [node name="Player" parent="." index="1"]
-position = Vector2( -398, -17 )
+position = Vector2( -480, 16 )
 
 [node name="CollisionShape2D" parent="Player" index="1"]
 position = Vector2( 0, 19.25 )
 
 [node name="TileMap" parent="." index="2"]
-tile_data = PoolIntArray( -262152, 1, 0, -262151, 1, 0, -262150, 1, 0, -262149, 1, 0, -262148, 1, 0, -262147, 1, 0, -262146, 1, 0, -262145, 1, 0, -327680, 1, 0, -327679, 1, 0, -327678, 1, 0, -327677, 1, 0, -327676, 1, 0, -327675, 1, 0, -327674, 1, 0, -327673, 1, 0, -196616, 1, 0, -196615, 3, 0, -196614, 3, 0, -196613, 3, 0, -196612, 3, 0, -196611, 3, 0, -196610, 3, 0, -196609, 3, 0, -262144, 3, 0, -262143, 3, 0, -262142, 3, 0, -262141, 3, 0, -262140, 3, 0, -262139, 3, 0, -262138, 3, 0, -262137, 1, 0, -131080, 1, 0, -131079, 3, 0, -131078, 3, 0, -131077, 3, 0, -131076, 3, 0, -131075, 3, 0, -131074, 3, 0, -131073, 3, 0, -196608, 3, 0, -196607, 3, 0, -196606, 3, 0, -196605, 3, 0, -196604, 3, 0, -196603, 3, 0, -196602, 3, 0, -196601, 1, 0, -65544, 1, 0, -65543, 3, 0, -65542, 3, 0, -65541, 3, 0, -65540, 3, 0, -65539, 3, 0, -65538, 3, 0, -65537, 3, 0, -131072, 3, 0, -131071, 3, 0, -131070, 3, 0, -131069, 3, 0, -131068, 3, 0, -131067, 3, 0, -131066, 3, 0, -131065, 1, 0, -8, 1, 0, -7, 3, 0, -6, 3, 0, -5, 3, 0, -4, 3, 0, -3, 3, 0, -2, 3, 0, -1, 3, 0, -65536, 3, 0, -65535, 3, 0, -65534, 3, 0, -65533, 3, 0, -65532, 3, 0, -65531, 3, 0, -65530, 3, 0, -65529, 1, 0, 65528, 1, 0, 65529, 3, 0, 65530, 3, 0, 65531, 3, 0, 65532, 3, 0, 65533, 3, 0, 65534, 3, 0, 65535, 3, 0, 0, 3, 0, 1, 3, 0, 2, 3, 0, 3, 3, 0, 4, 3, 0, 5, 3, 0, 6, 3, 0, 7, 1, 0, 131064, 1, 0, 131065, 3, 0, 131066, 3, 0, 131067, 3, 0, 131068, 3, 0, 131069, 3, 0, 131070, 3, 0, 131071, 3, 0, 65536, 3, 0, 65537, 3, 0, 65538, 3, 0, 65539, 3, 0, 65540, 3, 0, 65541, 3, 0, 65542, 3, 0, 65543, 1, 0, 196600, 1, 0, 196601, 3, 0, 196602, 3, 0, 196603, 3, 0, 196604, 3, 0, 196605, 3, 0, 196606, 3, 0, 196607, 3, 0, 131072, 3, 0, 131073, 3, 0, 131074, 3, 0, 131075, 3, 0, 131076, 3, 0, 131077, 3, 0, 131078, 3, 0, 131079, 2, 0, 262136, 1, 0, 262137, 3, 0, 262138, 3, 0, 262139, 3, 0, 262140, 3, 0, 262141, 3, 0, 262142, 3, 0, 262143, 3, 0, 196608, 3, 0, 196609, 3, 0, 196610, 3, 0, 196611, 3, 0, 196612, 3, 0, 196613, 3, 0, 196614, 3, 0, 196615, 1, 0, 327672, 1, 0, 327673, 1, 0, 327674, 1, 0, 327675, 1, 0, 327676, 1, 0, 327677, 1, 0, 327678, 1, 0, 327679, 1, 0, 262144, 1, 0, 262145, 1, 0, 262146, 1, 0, 262147, 1, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262151, 1, 0 )
+tile_data = PoolIntArray( -262152, 1, 0, -262151, 1, 0, -262150, 1, 0, -262149, 1, 0, -262148, 1, 0, -262147, 1, 0, -262146, 1, 0, -262145, 1, 0, -327680, 1, 0, -327679, 1, 0, -327678, 1, 0, -327677, 1, 0, -327676, 1, 0, -327675, 1, 0, -327674, 1, 0, -327673, 1, 0, -196616, 1, 0, -196615, 3, 0, -196614, 3, 0, -196613, 3, 0, -196612, 3, 0, -196611, 3, 0, -196610, 3, 0, -196609, 3, 0, -262144, 3, 0, -262143, 3, 0, -262142, 3, 0, -262141, 3, 0, -262140, 3, 0, -262139, 3, 0, -262138, 3, 0, -262137, 1, 0, -131080, 1, 0, -131079, 3, 0, -131078, 3, 0, -131077, 3, 0, -131076, 3, 0, -131075, 3, 0, -131074, 3, 0, -131073, 3, 0, -196608, 3, 0, -196607, 3, 0, -196606, 3, 0, -196605, 3, 0, -196604, 3, 0, -196603, 3, 0, -196602, 3, 0, -196601, 1, 0, -65544, 1, 0, -65543, 3, 0, -65542, 3, 0, -65541, 3, 0, -65540, 3, 0, -65539, 3, 0, -65538, 3, 0, -65537, 3, 0, -131072, 3, 0, -131071, 3, 0, -131070, 3, 0, -131069, 3, 0, -131068, 3, 0, -131067, 3, 0, -131066, 3, 0, -131065, 1, 0, -8, 1, 0, -7, 3, 0, -6, 3, 0, -5, 3, 0, -4, 3, 0, -3, 3, 0, -2, 3, 0, -1, 3, 0, -65536, 3, 0, -65535, 3, 0, -65534, 3, 0, -65533, 3, 0, -65532, 3, 0, -65531, 3, 0, -65530, 3, 0, -65529, 1, 0, 65528, 3, 0, 65529, 3, 0, 65530, 3, 0, 65531, 3, 0, 65532, 3, 0, 65533, 3, 0, 65534, 3, 0, 65535, 3, 0, 0, 3, 0, 1, 3, 0, 2, 3, 0, 3, 3, 0, 4, 3, 0, 5, 3, 0, 6, 3, 0, 7, 1, 0, 131064, 1, 0, 131065, 3, 0, 131066, 3, 0, 131067, 3, 0, 131068, 3, 0, 131069, 3, 0, 131070, 3, 0, 131071, 3, 0, 65536, 3, 0, 65537, 3, 0, 65538, 3, 0, 65539, 3, 0, 65540, 3, 0, 65541, 3, 0, 65542, 3, 0, 65543, 1, 0, 196600, 1, 0, 196601, 3, 0, 196602, 3, 0, 196603, 3, 0, 196604, 3, 0, 196605, 3, 0, 196606, 3, 0, 196607, 3, 0, 131072, 3, 0, 131073, 3, 0, 131074, 3, 0, 131075, 3, 0, 131076, 3, 0, 131077, 3, 0, 131078, 3, 0, 131079, 2, 0, 262136, 1, 0, 262137, 3, 0, 262138, 3, 0, 262139, 3, 0, 262140, 3, 0, 262141, 3, 0, 262142, 3, 0, 262143, 3, 0, 196608, 3, 0, 196609, 3, 0, 196610, 3, 0, 196611, 3, 0, 196612, 3, 0, 196613, 3, 0, 196614, 3, 0, 196615, 1, 0, 327672, 1, 0, 327673, 1, 0, 327674, 1, 0, 327675, 1, 0, 327676, 1, 0, 327677, 1, 0, 327678, 1, 0, 327679, 1, 0, 262144, 1, 0, 262145, 1, 0, 262146, 1, 0, 262147, 1, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262151, 1, 0 )
 
 [node name="Door" parent="." index="4"]
 position = Vector2( 483, 157 )
 
 [node name="Moon" parent="." index="6" instance=ExtResource( 2 )]
 show_behind_parent = true
-position = Vector2( -161, 157 )
+position = Vector2( 351, -163 )
 
-[node name="Moon2" parent="." index="7" instance=ExtResource( 2 )]
+[node name="Moon24" parent="." index="7" instance=ExtResource( 2 )]
 show_behind_parent = true
-position = Vector2( -289, 93 )
+position = Vector2( 351, 157 )
 
-[node name="Moon3" parent="." index="8" instance=ExtResource( 2 )]
+[node name="Moon2" parent="." index="8" instance=ExtResource( 2 )]
 show_behind_parent = true
-position = Vector2( -161, -35 )
+position = Vector2( 287, 93 )
 
-[node name="Moon4" parent="." index="9" instance=ExtResource( 2 )]
+[node name="Moon15" parent="." index="9" instance=ExtResource( 2 )]
 show_behind_parent = true
-position = Vector2( -225, -163 )
+position = Vector2( 159, -163 )
 
-[node name="Moon5" parent="." index="10" instance=ExtResource( 2 )]
+[node name="Moon16" parent="." index="10" instance=ExtResource( 2 )]
 show_behind_parent = true
-position = Vector2( -33, -163 )
+position = Vector2( 159, -227 )
 
-[node name="Moon6" parent="." index="11" instance=ExtResource( 2 )]
+[node name="Moon17" parent="." index="11" instance=ExtResource( 2 )]
 show_behind_parent = true
-position = Vector2( -289, -35 )
+position = Vector2( 95, 221 )
 
-[node name="Moon7" parent="." index="12" instance=ExtResource( 2 )]
+[node name="Moon18" parent="." index="12" instance=ExtResource( 2 )]
 show_behind_parent = true
-position = Vector2( -289, 221 )
+position = Vector2( 31, -227 )
 
-[node name="Moon8" parent="." index="13" instance=ExtResource( 2 )]
+[node name="Moon19" parent="." index="13" instance=ExtResource( 2 )]
 show_behind_parent = true
-position = Vector2( -225, 93 )
+position = Vector2( 31, -35 )
 
-[node name="Moon9" parent="." index="14" instance=ExtResource( 2 )]
+[node name="Moon20" parent="." index="14" instance=ExtResource( 2 )]
 show_behind_parent = true
-position = Vector2( -161, -226 )
+position = Vector2( -33, -227 )
 
-[node name="Moon10" parent="." index="15" instance=ExtResource( 2 )]
-show_behind_parent = true
-position = Vector2( -96, -99 )
-
-[node name="Moon11" parent="." index="16" instance=ExtResource( 2 )]
-show_behind_parent = true
-position = Vector2( -97, 29 )
-
-[node name="Moon12" parent="." index="17" instance=ExtResource( 2 )]
+[node name="Moon21" parent="." index="15" instance=ExtResource( 2 )]
 show_behind_parent = true
 position = Vector2( -97, 221 )
 
-[node name="Moon13" parent="." index="18" instance=ExtResource( 2 )]
+[node name="Moon22" parent="." index="16" instance=ExtResource( 2 )]
 show_behind_parent = true
-position = Vector2( -33, 29 )
+position = Vector2( -161, 157 )
 
-[node name="Moon14" parent="." index="19" instance=ExtResource( 2 )]
+[node name="Moon23" parent="." index="17" instance=ExtResource( 2 )]
 show_behind_parent = true
-position = Vector2( -33, 221 )
+position = Vector2( -160, -163 )
 
-[node name="Sun" parent="." index="20" instance=ExtResource( 4 )]
+[node name="Moon3" parent="." index="18" instance=ExtResource( 2 )]
 show_behind_parent = true
-position = Vector2( -161, 29 )
+position = Vector2( -225, 93 )
 
-[node name="Sun2" parent="." index="21" instance=ExtResource( 4 )]
+[node name="Moon4" parent="." index="19" instance=ExtResource( 2 )]
 show_behind_parent = true
-position = Vector2( -225, 157 )
+position = Vector2( -289, -227 )
 
-[node name="Sun3" parent="." index="22" instance=ExtResource( 4 )]
+[node name="Moon5" parent="." index="20" instance=ExtResource( 2 )]
 show_behind_parent = true
-position = Vector2( -225, -99 )
+position = Vector2( -289, 221 )
 
-[node name="Sun4" parent="." index="23" instance=ExtResource( 4 )]
+[node name="Moon6" parent="." index="21" instance=ExtResource( 2 )]
 show_behind_parent = true
-position = Vector2( -96, -163 )
+position = Vector2( -353, -163 )
 
-[node name="Sun5" parent="." index="24" instance=ExtResource( 4 )]
+[node name="Moon7" parent="." index="22" instance=ExtResource( 2 )]
 show_behind_parent = true
-position = Vector2( -33, -35 )
+position = Vector2( 222, 157 )
 
-[node name="Sun6" parent="." index="25" instance=ExtResource( 4 )]
+[node name="Moon8" parent="." index="23" instance=ExtResource( 2 )]
 show_behind_parent = true
-position = Vector2( -289, 29 )
+position = Vector2( 287, -35 )
 
-[node name="Sun7" parent="." index="26" instance=ExtResource( 4 )]
+[node name="Moon9" parent="." index="24" instance=ExtResource( 2 )]
 show_behind_parent = true
-position = Vector2( -289, -226 )
+position = Vector2( 223, -99 )
 
-[node name="Sun8" parent="." index="27" instance=ExtResource( 4 )]
+[node name="Moon10" parent="." index="25" instance=ExtResource( 2 )]
 show_behind_parent = true
-position = Vector2( -224, -226 )
+position = Vector2( 95, 29 )
 
-[node name="Sun9" parent="." index="28" instance=ExtResource( 4 )]
-show_behind_parent = true
-position = Vector2( -161, 221 )
-
-[node name="Sun10" parent="." index="29" instance=ExtResource( 4 )]
-show_behind_parent = true
-position = Vector2( -161, -99 )
-
-[node name="Sun11" parent="." index="30" instance=ExtResource( 4 )]
-show_behind_parent = true
-position = Vector2( -97, 93 )
-
-[node name="Sun12" parent="." index="31" instance=ExtResource( 4 )]
-show_behind_parent = true
-position = Vector2( -32, -226 )
-
-[node name="Sun13" parent="." index="32" instance=ExtResource( 4 )]
+[node name="Moon11" parent="." index="26" instance=ExtResource( 2 )]
 show_behind_parent = true
 position = Vector2( -33, 157 )
 
-[node name="Star" parent="." index="33" instance=ExtResource( 3 )]
-show_behind_parent = true
-position = Vector2( -161, 93 )
-
-[node name="Star2" parent="." index="34" instance=ExtResource( 3 )]
-show_behind_parent = true
-position = Vector2( -289, 157 )
-
-[node name="Star3" parent="." index="35" instance=ExtResource( 3 )]
-show_behind_parent = true
-position = Vector2( -225, -35 )
-
-[node name="Star4" parent="." index="36" instance=ExtResource( 3 )]
-show_behind_parent = true
-position = Vector2( -161, -163 )
-
-[node name="Star5" parent="." index="37" instance=ExtResource( 3 )]
-show_behind_parent = true
-position = Vector2( -33, -99 )
-
-[node name="Star6" parent="." index="38" instance=ExtResource( 3 )]
-show_behind_parent = true
-position = Vector2( -289, -99 )
-
-[node name="Star7" parent="." index="39" instance=ExtResource( 3 )]
-show_behind_parent = true
-position = Vector2( -289, -163 )
-
-[node name="Star8" parent="." index="40" instance=ExtResource( 3 )]
-show_behind_parent = true
-position = Vector2( -225, 29 )
-
-[node name="Star9" parent="." index="41" instance=ExtResource( 3 )]
-show_behind_parent = true
-position = Vector2( -225, 221 )
-
-[node name="Star10" parent="." index="42" instance=ExtResource( 3 )]
-show_behind_parent = true
-position = Vector2( -96, -226 )
-
-[node name="Star11" parent="." index="43" instance=ExtResource( 3 )]
+[node name="Moon12" parent="." index="27" instance=ExtResource( 2 )]
 show_behind_parent = true
 position = Vector2( -97, -35 )
 
-[node name="Star12" parent="." index="44" instance=ExtResource( 3 )]
+[node name="Moon13" parent="." index="28" instance=ExtResource( 2 )]
 show_behind_parent = true
+position = Vector2( -225, -35 )
+
+[node name="Moon14" parent="." index="29" instance=ExtResource( 2 )]
+show_behind_parent = true
+position = Vector2( -353, 93 )
+
+[node name="Sun" parent="." index="30" instance=ExtResource( 4 )]
+show_behind_parent = true
+position = Vector2( 351, -35 )
+
+[node name="Sun24" parent="." index="31" instance=ExtResource( 4 )]
+show_behind_parent = true
+position = Vector2( 351, 93 )
+
+[node name="Sun14" parent="." index="32" instance=ExtResource( 4 )]
+show_behind_parent = true
+position = Vector2( 223, -227 )
+
+[node name="Sun15" parent="." index="33" instance=ExtResource( 4 )]
+show_behind_parent = true
+position = Vector2( 159, 93 )
+
+[node name="Sun16" parent="." index="34" instance=ExtResource( 4 )]
+show_behind_parent = true
+position = Vector2( 95, 157 )
+
+[node name="Sun17" parent="." index="35" instance=ExtResource( 4 )]
+show_behind_parent = true
+position = Vector2( 95, -99 )
+
+[node name="Sun18" parent="." index="36" instance=ExtResource( 4 )]
+show_behind_parent = true
+position = Vector2( 31, -163 )
+
+[node name="Sun19" parent="." index="37" instance=ExtResource( 4 )]
+show_behind_parent = true
+position = Vector2( -33, -99 )
+
+[node name="Sun20" parent="." index="38" instance=ExtResource( 4 )]
+show_behind_parent = true
+position = Vector2( -97, -227 )
+
+[node name="Sun21" parent="." index="39" instance=ExtResource( 4 )]
+show_behind_parent = true
+position = Vector2( -97, 93 )
+
+[node name="Sun22" parent="." index="40" instance=ExtResource( 4 )]
+show_behind_parent = true
+position = Vector2( -161, 221 )
+
+[node name="Sun23" parent="." index="41" instance=ExtResource( 4 )]
+show_behind_parent = true
+position = Vector2( -225, 29 )
+
+[node name="Sun2" parent="." index="42" instance=ExtResource( 4 )]
+show_behind_parent = true
+position = Vector2( -225, -163 )
+
+[node name="Sun3" parent="." index="43" instance=ExtResource( 4 )]
+show_behind_parent = true
+position = Vector2( -289, 157 )
+
+[node name="Sun4" parent="." index="44" instance=ExtResource( 4 )]
+show_behind_parent = true
+position = Vector2( -353, -227 )
+
+[node name="Sun5" parent="." index="45" instance=ExtResource( 4 )]
+show_behind_parent = true
+position = Vector2( -353, -35 )
+
+[node name="Sun6" parent="." index="46" instance=ExtResource( 4 )]
+show_behind_parent = true
+position = Vector2( 287, 221 )
+
+[node name="Sun7" parent="." index="47" instance=ExtResource( 4 )]
+show_behind_parent = true
+position = Vector2( 223, 29 )
+
+[node name="Sun8" parent="." index="48" instance=ExtResource( 4 )]
+show_behind_parent = true
+position = Vector2( 287, -163 )
+
+[node name="Sun9" parent="." index="49" instance=ExtResource( 4 )]
+show_behind_parent = true
+position = Vector2( 159, -35 )
+
+[node name="Sun10" parent="." index="50" instance=ExtResource( 4 )]
+show_behind_parent = true
+position = Vector2( 31, 93 )
+
+[node name="Sun11" parent="." index="51" instance=ExtResource( 4 )]
+show_behind_parent = true
+position = Vector2( -33, 29 )
+
+[node name="Sun12" parent="." index="52" instance=ExtResource( 4 )]
+show_behind_parent = true
+position = Vector2( -160, -99 )
+
+[node name="Sun13" parent="." index="53" instance=ExtResource( 4 )]
+show_behind_parent = true
+position = Vector2( -289, 29 )
+
+[node name="Star" parent="." index="54" instance=ExtResource( 3 )]
+show_behind_parent = true
+position = Vector2( -225, -227 )
+
+[node name="Star2" parent="." index="55" instance=ExtResource( 3 )]
+show_behind_parent = true
+position = Vector2( -225, 157 )
+
+[node name="Star3" parent="." index="56" instance=ExtResource( 3 )]
+show_behind_parent = true
+position = Vector2( -289, -99 )
+
+[node name="Star4" parent="." index="57" instance=ExtResource( 3 )]
+show_behind_parent = true
+position = Vector2( -353, 157 )
+
+[node name="Star5" parent="." index="58" instance=ExtResource( 3 )]
+show_behind_parent = true
+position = Vector2( -353, 29 )
+
+[node name="Star6" parent="." index="59" instance=ExtResource( 3 )]
+show_behind_parent = true
+position = Vector2( 287, 157 )
+
+[node name="Star7" parent="." index="60" instance=ExtResource( 3 )]
+show_behind_parent = true
+position = Vector2( 287, 29 )
+
+[node name="Star8" parent="." index="61" instance=ExtResource( 3 )]
+show_behind_parent = true
+position = Vector2( 223, -163 )
+
+[node name="Star9" parent="." index="62" instance=ExtResource( 3 )]
+show_behind_parent = true
+position = Vector2( 95, -35 )
+
+[node name="Star10" parent="." index="63" instance=ExtResource( 3 )]
+show_behind_parent = true
+position = Vector2( 31, 157 )
+
+[node name="Star11" parent="." index="64" instance=ExtResource( 3 )]
+show_behind_parent = true
+position = Vector2( -97, 29 )
+
+[node name="Star12" parent="." index="65" instance=ExtResource( 3 )]
+show_behind_parent = true
+position = Vector2( -160, -35 )
+
+[node name="Star13" parent="." index="66" instance=ExtResource( 3 )]
+show_behind_parent = true
+position = Vector2( -289, 93 )
+
+[node name="Star14" parent="." index="67" instance=ExtResource( 3 )]
+show_behind_parent = true
+position = Vector2( 222, 221 )
+
+[node name="Star15" parent="." index="68" instance=ExtResource( 3 )]
+show_behind_parent = true
+position = Vector2( 159, 29 )
+
+[node name="Star16" parent="." index="69" instance=ExtResource( 3 )]
+show_behind_parent = true
+position = Vector2( 159, 157 )
+
+[node name="Star17" parent="." index="70" instance=ExtResource( 3 )]
+show_behind_parent = true
+position = Vector2( 95, -227 )
+
+[node name="Star18" parent="." index="71" instance=ExtResource( 3 )]
+show_behind_parent = true
+position = Vector2( 31, -99 )
+
+[node name="Star19" parent="." index="72" instance=ExtResource( 3 )]
+show_behind_parent = true
+position = Vector2( -33, 221 )
+
+[node name="Star20" parent="." index="73" instance=ExtResource( 3 )]
+show_behind_parent = true
+position = Vector2( -33, -35 )
+
+[node name="Star21" parent="." index="74" instance=ExtResource( 3 )]
+show_behind_parent = true
+position = Vector2( -97, -163 )
+
+[node name="Star22" parent="." index="75" instance=ExtResource( 3 )]
+show_behind_parent = true
+position = Vector2( -161, 93 )
+
+[node name="Star23" parent="." index="76" instance=ExtResource( 3 )]
+show_behind_parent = true
+position = Vector2( 351, -227 )
+
+[node name="Star24" parent="." index="77" instance=ExtResource( 3 )]
+show_behind_parent = true
+position = Vector2( 351, -99 )
+
+[node name="Start" type="Position2D" parent="." index="78"]
+position = Vector2( -480, 33 )
+
+[node name="Coin" parent="." index="79" instance=ExtResource( 5 )]
+position = Vector2( 287, 219 )
+
+[node name="Coin2" parent="." index="80" instance=ExtResource( 5 )]
+position = Vector2( 289, 29 )
+
+[node name="Coin3" parent="." index="81" instance=ExtResource( 5 )]
+position = Vector2( -223, -35 )
+
+[node name="Coin4" parent="." index="82" instance=ExtResource( 5 )]
+position = Vector2( 224, -163 )
+
+[node name="Coin5" parent="." index="83" instance=ExtResource( 5 )]
+position = Vector2( -33, 94 )
+
+[node name="FullMoon" parent="." index="84" instance=ExtResource( 6 )]
+position = Vector2( -225, -99 )
+
+[node name="FullMoon13" parent="." index="85" instance=ExtResource( 6 )]
+position = Vector2( 223, -35 )
+
+[node name="FullMoon14" parent="." index="86" instance=ExtResource( 6 )]
+position = Vector2( 159, 221 )
+
+[node name="FullMoon15" parent="." index="87" instance=ExtResource( 6 )]
+position = Vector2( 95, -163 )
+
+[node name="FullMoon16" parent="." index="88" instance=ExtResource( 6 )]
+position = Vector2( 31, 29 )
+
+[node name="FullMoon17" parent="." index="89" instance=ExtResource( 6 )]
+position = Vector2( 31, 221 )
+
+[node name="FullMoon18" parent="." index="90" instance=ExtResource( 6 )]
+position = Vector2( -33, -163 )
+
+[node name="FullMoon19" parent="." index="91" instance=ExtResource( 6 )]
 position = Vector2( -97, 157 )
 
-[node name="Star13" parent="." index="45" instance=ExtResource( 3 )]
-show_behind_parent = true
+[node name="FullMoon20" parent="." index="92" instance=ExtResource( 6 )]
+position = Vector2( -161, 29 )
+
+[node name="FullMoon21" parent="." index="93" instance=ExtResource( 6 )]
+position = Vector2( -160, -227 )
+
+[node name="FullMoon22" parent="." index="94" instance=ExtResource( 6 )]
+position = Vector2( -225, 221 )
+
+[node name="FullMoon2" parent="." index="95" instance=ExtResource( 6 )]
+position = Vector2( -289, -163 )
+
+[node name="FullMoon3" parent="." index="96" instance=ExtResource( 6 )]
+position = Vector2( -353, 221 )
+
+[node name="FullMoon4" parent="." index="97" instance=ExtResource( 6 )]
+position = Vector2( -353, -99 )
+
+[node name="FullMoon5" parent="." index="98" instance=ExtResource( 6 )]
+position = Vector2( 351, 221 )
+
+[node name="FullMoon6" parent="." index="99" instance=ExtResource( 6 )]
+position = Vector2( 223, 93 )
+
+[node name="FullMoon7" parent="." index="100" instance=ExtResource( 6 )]
+position = Vector2( 287, -99 )
+
+[node name="FullMoon8" parent="." index="101" instance=ExtResource( 6 )]
+position = Vector2( 159, -99 )
+
+[node name="FullMoon9" parent="." index="102" instance=ExtResource( 6 )]
+position = Vector2( 95, 93 )
+
+[node name="FullMoon10" parent="." index="103" instance=ExtResource( 6 )]
 position = Vector2( -33, 93 )
 
-[node name="Start" type="Position2D" parent="." index="46"]
-position = Vector2( -402, 34 )
+[node name="FullMoon11" parent="." index="104" instance=ExtResource( 6 )]
+position = Vector2( -97, -99 )
 
-[node name="Coin" parent="." index="47" instance=ExtResource( 5 )]
-position = Vector2( -161, 158 )
+[node name="FullMoon12" parent="." index="105" instance=ExtResource( 6 )]
+position = Vector2( -289, -35 )
 
-[node name="Coin2" parent="." index="48" instance=ExtResource( 5 )]
-position = Vector2( -224, -31 )
+[node name="FullMoon23" parent="." index="106" instance=ExtResource( 6 )]
+position = Vector2( 287, -227 )
 
-[node name="Coin3" parent="." index="49" instance=ExtResource( 5 )]
-position = Vector2( -33, -34 )
-
-[node name="Coin4" parent="." index="50" instance=ExtResource( 5 )]
-position = Vector2( -31, 158 )
-
-[node name="Coin5" parent="." index="51" instance=ExtResource( 5 )]
-position = Vector2( -97, -161 )
+[node name="FullMoon24" parent="." index="107" instance=ExtResource( 6 )]
+position = Vector2( 351, 29 )
 
 [connection signal="in_moon" from="Moon" to="." method="_on_Moon_in_moon"]
+[connection signal="in_moon" from="Moon24" to="." method="_on_Moon_in_moon"]
 [connection signal="in_moon" from="Moon2" to="." method="_on_Moon_in_moon"]
+[connection signal="in_moon" from="Moon15" to="." method="_on_Moon_in_moon"]
+[connection signal="in_moon" from="Moon16" to="." method="_on_Moon_in_moon"]
+[connection signal="in_moon" from="Moon17" to="." method="_on_Moon_in_moon"]
+[connection signal="in_moon" from="Moon18" to="." method="_on_Moon_in_moon"]
+[connection signal="in_moon" from="Moon19" to="." method="_on_Moon_in_moon"]
+[connection signal="in_moon" from="Moon20" to="." method="_on_Moon_in_moon"]
+[connection signal="in_moon" from="Moon21" to="." method="_on_Moon_in_moon"]
+[connection signal="in_moon" from="Moon22" to="." method="_on_Moon_in_moon"]
+[connection signal="in_moon" from="Moon23" to="." method="_on_Moon_in_moon"]
 [connection signal="in_moon" from="Moon3" to="." method="_on_Moon_in_moon"]
 [connection signal="in_moon" from="Moon4" to="." method="_on_Moon_in_moon"]
 [connection signal="in_moon" from="Moon5" to="." method="_on_Moon_in_moon"]
@@ -213,6 +424,17 @@ position = Vector2( -97, -161 )
 [connection signal="in_moon" from="Moon13" to="." method="_on_Moon_in_moon"]
 [connection signal="in_moon" from="Moon14" to="." method="_on_Moon_in_moon"]
 [connection signal="on_sun" from="Sun" to="." method="_on_Sun_on_sun"]
+[connection signal="on_sun" from="Sun24" to="." method="_on_Sun_on_sun"]
+[connection signal="on_sun" from="Sun14" to="." method="_on_Sun_on_sun"]
+[connection signal="on_sun" from="Sun15" to="." method="_on_Sun_on_sun"]
+[connection signal="on_sun" from="Sun16" to="." method="_on_Sun_on_sun"]
+[connection signal="on_sun" from="Sun17" to="." method="_on_Sun_on_sun"]
+[connection signal="on_sun" from="Sun18" to="." method="_on_Sun_on_sun"]
+[connection signal="on_sun" from="Sun19" to="." method="_on_Sun_on_sun"]
+[connection signal="on_sun" from="Sun20" to="." method="_on_Sun_on_sun"]
+[connection signal="on_sun" from="Sun21" to="." method="_on_Sun_on_sun"]
+[connection signal="on_sun" from="Sun22" to="." method="_on_Sun_on_sun"]
+[connection signal="on_sun" from="Sun23" to="." method="_on_Sun_on_sun"]
 [connection signal="on_sun" from="Sun2" to="." method="_on_Sun_on_sun"]
 [connection signal="on_sun" from="Sun3" to="." method="_on_Sun_on_sun"]
 [connection signal="on_sun" from="Sun4" to="." method="_on_Sun_on_sun"]
@@ -238,10 +460,45 @@ position = Vector2( -97, -161 )
 [connection signal="on_star" from="Star11" to="." method="_on_Star_on_star"]
 [connection signal="on_star" from="Star12" to="." method="_on_Star_on_star"]
 [connection signal="on_star" from="Star13" to="." method="_on_Star_on_star"]
+[connection signal="on_star" from="Star14" to="." method="_on_Star_on_star"]
+[connection signal="on_star" from="Star15" to="." method="_on_Star_on_star"]
+[connection signal="on_star" from="Star16" to="." method="_on_Star_on_star"]
+[connection signal="on_star" from="Star17" to="." method="_on_Star_on_star"]
+[connection signal="on_star" from="Star18" to="." method="_on_Star_on_star"]
+[connection signal="on_star" from="Star19" to="." method="_on_Star_on_star"]
+[connection signal="on_star" from="Star20" to="." method="_on_Star_on_star"]
+[connection signal="on_star" from="Star21" to="." method="_on_Star_on_star"]
+[connection signal="on_star" from="Star22" to="." method="_on_Star_on_star"]
+[connection signal="on_star" from="Star23" to="." method="_on_Star_on_star"]
+[connection signal="on_star" from="Star24" to="." method="_on_Star_on_star"]
 [connection signal="coin_taken" from="Coin" to="." method="_on_Coin_coin_taken"]
 [connection signal="coin_taken" from="Coin2" to="." method="_on_Coin_coin_taken"]
 [connection signal="coin_taken" from="Coin3" to="." method="_on_Coin_coin_taken"]
 [connection signal="coin_taken" from="Coin4" to="." method="_on_Coin_coin_taken"]
 [connection signal="coin_taken" from="Coin5" to="." method="_on_Coin_coin_taken"]
+[connection signal="in_full_moon" from="FullMoon" to="." method="_on_FullMoon_in_full_moon"]
+[connection signal="in_full_moon" from="FullMoon13" to="." method="_on_FullMoon_in_full_moon"]
+[connection signal="in_full_moon" from="FullMoon14" to="." method="_on_FullMoon_in_full_moon"]
+[connection signal="in_full_moon" from="FullMoon15" to="." method="_on_FullMoon_in_full_moon"]
+[connection signal="in_full_moon" from="FullMoon16" to="." method="_on_FullMoon_in_full_moon"]
+[connection signal="in_full_moon" from="FullMoon17" to="." method="_on_FullMoon_in_full_moon"]
+[connection signal="in_full_moon" from="FullMoon18" to="." method="_on_FullMoon_in_full_moon"]
+[connection signal="in_full_moon" from="FullMoon19" to="." method="_on_FullMoon_in_full_moon"]
+[connection signal="in_full_moon" from="FullMoon20" to="." method="_on_FullMoon_in_full_moon"]
+[connection signal="in_full_moon" from="FullMoon21" to="." method="_on_FullMoon_in_full_moon"]
+[connection signal="in_full_moon" from="FullMoon22" to="." method="_on_FullMoon_in_full_moon"]
+[connection signal="in_full_moon" from="FullMoon2" to="." method="_on_FullMoon_in_full_moon"]
+[connection signal="in_full_moon" from="FullMoon3" to="." method="_on_FullMoon_in_full_moon"]
+[connection signal="in_full_moon" from="FullMoon4" to="." method="_on_FullMoon_in_full_moon"]
+[connection signal="in_full_moon" from="FullMoon5" to="." method="_on_FullMoon_in_full_moon"]
+[connection signal="in_full_moon" from="FullMoon6" to="." method="_on_FullMoon_in_full_moon"]
+[connection signal="in_full_moon" from="FullMoon7" to="." method="_on_FullMoon_in_full_moon"]
+[connection signal="in_full_moon" from="FullMoon8" to="." method="_on_FullMoon_in_full_moon"]
+[connection signal="in_full_moon" from="FullMoon9" to="." method="_on_FullMoon_in_full_moon"]
+[connection signal="in_full_moon" from="FullMoon10" to="." method="_on_FullMoon_in_full_moon"]
+[connection signal="in_full_moon" from="FullMoon11" to="." method="_on_FullMoon_in_full_moon"]
+[connection signal="in_full_moon" from="FullMoon12" to="." method="_on_FullMoon_in_full_moon"]
+[connection signal="in_full_moon" from="FullMoon23" to="." method="_on_FullMoon_in_full_moon"]
+[connection signal="in_full_moon" from="FullMoon24" to="." method="_on_FullMoon_in_full_moon"]
 
 [editable path="Life"]
