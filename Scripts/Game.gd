@@ -14,7 +14,6 @@ export (float, 2.0) var duration = 1.0
 
 onready var transition_animation = get_node("Transition/ColorRect/AnimationPlayer")
 
-
 func _process(delta):
 	open_door()
 	
@@ -25,13 +24,13 @@ func open_door():
 		$Door.visible = true
 		
 
+func _on_Life_score_no_life():
+	get_tree().change_scene("res://Scenes/GameOver.tscn")
+		
+
 func _on_Coin_coin_taken():
 	get_tree().call_group("HUD", "update_score")
 	coins += 1
-
-
-func _on_Life_score_no_life():
-	get_tree().change_scene("res://Scenes/GameOver.tscn")
 
 
 func _on_Trap_trapped():
@@ -131,3 +130,4 @@ func _on_Door_next_level():
 		transition_animation.play("Transition")
 		$Timer.start(1.0); yield($Timer, "timeout")
 		get_tree().change_scene(Scenes)
+

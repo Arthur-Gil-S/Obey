@@ -1,21 +1,102 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Images/icon.png" type="Texture" id=1]
 [ext_resource path="res://Images/coin_hud.png" type="Texture" id=2]
-[ext_resource path="res://Images/char.png" type="Texture" id=3]
+[ext_resource path="res://Images/char2.breathing.png" type="Texture" id=3]
+[ext_resource path="res://Images/char2.walking_right.png" type="Texture" id=4]
+[ext_resource path="res://Images/char2.walking_left.png" type="Texture" id=5]
 [ext_resource path="res://Assets/q5.png" type="Texture" id=6]
 [ext_resource path="res://Fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=8]
 [ext_resource path="res://Scripts/Score.gd" type="Script" id=9]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=10]
+[ext_resource path="res://Sounds/night-chip.ogg" type="AudioStream" id=11]
 [ext_resource path="res://Assets/q1.png" type="Texture" id=15]
 [ext_resource path="res://Assets/q4.png" type="Texture" id=16]
 [ext_resource path="res://Assets/q2.png" type="Texture" id=17]
 [ext_resource path="res://Assets/q3.png" type="Texture" id=18]
 [ext_resource path="res://Scenes/Life.tscn" type="PackedScene" id=19]
 
-[sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 16.5, 12.75 )
+[sub_resource type="AtlasTexture" id=19]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 132, 159 )
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 132, 0, 132, 159 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 264, 0, 132, 159 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 396, 0, 132, 159 )
+
+[sub_resource type="AtlasTexture" id=24]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 135, 163 )
+
+[sub_resource type="AtlasTexture" id=25]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 135, 0, 135, 163 )
+
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 270, 0, 135, 163 )
+
+[sub_resource type="AtlasTexture" id=27]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 405, 0, 135, 163 )
+
+[sub_resource type="AtlasTexture" id=28]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 134, 170 )
+
+[sub_resource type="AtlasTexture" id=29]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 134, 0, 134, 170 )
+
+[sub_resource type="AtlasTexture" id=30]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 268, 0, 134, 170 )
+
+[sub_resource type="AtlasTexture" id=31]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 402, 0, 134, 170 )
+
+[sub_resource type="SpriteFrames" id=23]
+animations = [ {
+"frames": [ SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ) ],
+"loop": true,
+"name": "breathing",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
+"loop": true,
+"name": "walking_left",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
+"loop": true,
+"name": "walking_right",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 16.5, 8.5 )
 
 [sub_resource type="ConvexPolygonShape2D" id=11]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
@@ -141,14 +222,15 @@ script = ExtResource( 8 )
 [node name="Player" type="KinematicBody2D" parent="."]
 script = ExtResource( 10 )
 
-[node name="Sprite" type="Sprite" parent="Player"]
-texture = ExtResource( 3 )
-hframes = 4
-vframes = 4
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
+position = Vector2( 1, 5 )
+scale = Vector2( 0.424242, 0.424528 )
+frames = SubResource( 23 )
+animation = "breathing"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( 0, 18.75 )
-shape = SubResource( 10 )
+position = Vector2( 0, 24 )
+shape = SubResource( 18 )
 
 [node name="TileMap" type="TileMap" parent="."]
 show_behind_parent = true
@@ -192,15 +274,20 @@ text = "/ 5"
 
 [node name="Life" parent="." instance=ExtResource( 19 )]
 
-[node name="Life_score" parent="Life" index="0" groups=["Life"]]
-anchor_left = 0.879
-anchor_top = 0.087
-anchor_right = 0.879
-anchor_bottom = 0.087
-margin_left = -0.0960693
-margin_top = -0.200005
-margin_right = 52.9039
-margin_bottom = 51.8
+[node name="Life_score" parent="Life" index="0"]
+anchor_left = 0.883
+anchor_top = 0.03
+anchor_right = 0.883
+anchor_bottom = 0.03
+margin_left = -0.192017
+margin_top = 0.0
+margin_right = 99.808
+margin_bottom = 16.0
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 11 )
+volume_db = -6.0
+autoplay = true
 
 [connection signal="no_life" from="Life/Life_score" to="." method="_on_Life_score_no_life"]
 

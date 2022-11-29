@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/door-removebg-preview.png-ed292d2e8a8bbd988c32c88e4d4c4b4d.stex"
+path="res://.import/fundo.png-922891a6f403861a222dc36f7d4fde78.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/door-removebg-preview.png"
-dest_files=[ "res://.import/door-removebg-preview.png-ed292d2e8a8bbd988c32c88e4d4c4b4d.stex" ]
+source_file="res://Images/fundo.png"
+dest_files=[ "res://.import/fundo.png-922891a6f403861a222dc36f7d4fde78.stex" ]
 
 [params]
 
