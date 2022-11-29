@@ -1,9 +1,8 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Images/icon.png" type="Texture" id=1]
 [ext_resource path="res://Images/coin_hud.png" type="Texture" id=2]
 [ext_resource path="res://Images/char.png" type="Texture" id=3]
-[ext_resource path="res://Images/exit-removebg-preview.png" type="Texture" id=5]
 [ext_resource path="res://Assets/q5.png" type="Texture" id=6]
 [ext_resource path="res://Fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=8]
@@ -133,9 +132,6 @@ font_data = ExtResource( 7 )
 size = 38
 font_data = ExtResource( 7 )
 
-[sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 26, 29.5 )
-
 [node name="Game" type="Node2D"]
 position = Vector2( 515, 301 )
 script = ExtResource( 8 )
@@ -194,17 +190,6 @@ margin_bottom = 43.008
 custom_fonts/font = SubResource( 6 )
 text = "/ 5"
 
-[node name="Door" type="Area2D" parent="."]
-position = Vector2( 417, 157 )
-
-[node name="Sprite" type="Sprite" parent="Door"]
-scale = Vector2( 1.7, 1.7 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
-position = Vector2( -5, 0.5 )
-shape = SubResource( 7 )
-
 [node name="Life" parent="." instance=ExtResource( 19 )]
 
 [node name="Life_score" parent="Life" index="0" groups=["Life"]]
@@ -217,7 +202,6 @@ margin_top = -0.200005
 margin_right = 52.9039
 margin_bottom = 51.8
 
-[connection signal="body_entered" from="Door" to="." method="_on_Door_body_entered"]
 [connection signal="no_life" from="Life/Life_score" to="." method="_on_Life_score_no_life"]
 
 [editable path="Life"]

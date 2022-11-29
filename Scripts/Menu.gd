@@ -1,7 +1,7 @@
 extends Control
 
 func _on_NewGame_pressed():
-	get_tree().change_scene("res://Obey.tscn")
+	get_tree().change_scene("res://Scenes/Level1.tscn")
 
 func _on_Quit_pressed():
-	get_tree().change_scene("res://GameOver.tscn")
+	get_tree().quit()

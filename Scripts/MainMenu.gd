@@ -4,7 +4,7 @@ onready var selector_one = $CenterContainer/VBoxContainer/CenterContainer2/VBoxC
 onready var selector_two = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer/Selector
 onready var selector_three = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3/HBoxContainer/Selector
 
-const game_scene = preload("res://Scenes/Obey.tscn")
+const game_scene = preload("res://Scenes/Level1.tscn")
 
 var current_selection = 0
 
@@ -25,6 +25,8 @@ func handle_selection(_current_selection):
 	if _current_selection == 0:
 		get_parent().add_child(game_scene.instance())
 		queue_free()
+	if _current_selection == 2:
+		get_tree().quit()
 	
 
 func set_current_selection(_current_selection):
